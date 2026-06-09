@@ -1,0 +1,106 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050816;
+    color:white;
+    font-family:'Inter',sans-serif;
+}
+
+a{
+    text-decoration:none;
+}
+
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:fixed;
+    top:0;
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#4da6ff;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    color:white;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#4da6ff;
+}
+
+.page-section{
+    padding:120px 8%;
+    min-height:100vh;
+}
+
+.page-title{
+    font-size:50px;
+    color:#4da6ff;
+    margin-bottom:40px;
+}
+
+.card,
+.contact-card{
+    background:#0d1324;
+    border:1px solid rgba(77,166,255,0.2);
+    padding:30px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 0 20px rgba(77,166,255,0.1);
+}
+
+.card h2,
+.contact-card h3{
+    margin-bottom:10px;
+}
+
+.card h4{
+    color:#4da6ff;
+}
+
+.card p,
+.contact-card p{
+    color:#aaa;
+}
+
+.about-container{
+    display:flex;
+    align-items:center;
+    gap:60px;
+}
+
+.about-image img{
+    width:350px;
+    border-radius:20px;
+    border:3px solid #4da6ff;
+}
+
+.about-text{
+    max-width:700px;
+}
+
+.about-text p{
+    color:#aaa;
+    line-height:1.9;
+    margin-bottom:20px;
+}
