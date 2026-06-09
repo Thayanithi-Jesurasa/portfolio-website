@@ -104,3 +104,101 @@ a{
     line-height:1.9;
     margin-bottom:20px;
 }
+/* ── Mobile hamburger (injected by navbar.js) ───────────────────────────── */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-links a.active { color: #4da6ff; font-weight: 600; }
+
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px; left: 0;
+    width: 100%;
+    background: rgba(5, 8, 22, 0.97);
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0 20px;
+    border-bottom: 1px solid rgba(77, 166, 255, 0.15);
+  }
+  .nav-links.nav-open { display: flex; }
+  .nav-links li { padding: 12px 8%; }
+}
+
+/* ── Image fallback: broken images show styled dark placeholder ─────────── */
+
+img { background: linear-gradient(135deg, #0d1a35, #0a1628); }
+
+.about-image img,
+.hero-image .image-box img {
+  background: linear-gradient(135deg, #0d1a35, #0a1628);
+  min-height: 200px;
+}
+
+/* ── Cert thumbnail placeholder ─────────────────────────────────────────── */
+
+.cert-thumb {
+  position: relative;
+  background: linear-gradient(135deg, #0d1a35 0%, #0a1628 100%);
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-thumb::before {
+  content: '🏅';
+  font-size: 48px;
+  position: absolute;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.cert-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 1;
+  cursor: zoom-in;
+}
+
+.cert-card:hover .cert-thumb img { transform: scale(1.04); }
+
+/* ── About image responsive ──────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .about-image img { width: 100%; max-width: 300px; }
+  .page-title { font-size: 36px; }
+}

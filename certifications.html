@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certifications | Thayanithi Jesurasa</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .cert-card {
+      background: #0d1324;
+      border: 1px solid rgba(77, 166, 255, 0.18);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(77, 166, 255, 0.07);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .cert-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(77, 166, 255, 0.4);
+      box-shadow: 0 12px 40px rgba(77, 166, 255, 0.15);
+    }
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #4da6ff, #a78bfa);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .cert-card:hover::before { opacity: 1; }
+    .cert-info { padding: 20px 22px 22px; }
+    .cert-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #fff; }
+    .cert-issuer { color: #4da6ff; font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+    .cert-date   { color: #666;    font-size: 12px; }
+    .cert-badge {
+      display: inline-block; margin-top: 12px;
+      background: rgba(0,200,120,0.1); border: 1px solid rgba(0,200,120,0.3);
+      color: #00c878; font-size: 11px; font-weight: 600;
+      padding: 3px 10px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    @media (max-width: 768px) { .certs-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">TJ.</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-section">
+
+    <h1 class="page-title">Certifications</h1>
+
+    <div class="certs-grid">
+
+      <div class="cert-card">
+        <div class="cert-thumb">
+          <img src="assets/certifications/cert-1.jpg" alt="Google AI Essentials" onerror="this.style.display='none'">
+        </div>
+        <div class="cert-info">
+          <h3>Google AI Essentials</h3>
+          <p class="cert-issuer">Google</p>
+          
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-thumb">
+          <img src="assets/certifications/cert-2.jpg" alt="IEEEXtreme 2025" onerror="this.style.display='none'">
+        </div>
+        <div class="cert-info">
+          <h3>IEEEXtreme Programming Competition</h3>
+          <p class="cert-issuer">IEEE</p>
+          <p class="cert-date">2025</p>
+          
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-thumb">
+          <img src="assets/certifications/cert-3.jpg" alt="IEEEXtreme 2024" onerror="this.style.display='none'">
+        </div>
+        <div class="cert-info">
+          <h3>IEEEXtreme Programming Competition</h3>
+          <p class="cert-issuer">IEEE</p>
+          <p class="cert-date">2024</p>
+          
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-thumb">
+          <img src="assets/certifications/cert-4.jpg" alt="Certificate of Participation" onerror="this.style.display='none'">
+        </div>
+        <div class="cert-info">
+          <h3>Certificate of Participation</h3>
+          <p class="cert-issuer">Rajarata University of Sri Lanka</p>
+          
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-thumb">
+          <img src="assets/certifications/cert-5.jpg" alt="Innorbit Project Carnival" onerror="this.style.display='none'">
+        </div>
+        <div class="cert-info">
+          <h3>Innorbit Project Carnival</h3>
+          <p class="cert-issuer">Rajarata University of Sri Lanka</p>
+          
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

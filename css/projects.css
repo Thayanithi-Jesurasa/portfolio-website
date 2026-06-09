@@ -1,0 +1,257 @@
+/* ── projects.css ─────────────────────────────────────────────────────────── */
+
+.page-subtitle {
+  color: #888;
+  font-size: 16px;
+  margin-top: -24px;
+  margin-bottom: 36px;
+}
+
+/* ── Filter bar ───────────────────────────────────────────────────────────── */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(77, 166, 255, 0.3);
+  color: #888;
+  padding: 9px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.02em;
+}
+
+.filter-btn:hover { border-color: #4da6ff; color: #4da6ff; }
+
+.filter-btn.active {
+  background: #4da6ff;
+  border-color: #4da6ff;
+  color: #050816;
+  font-weight: 600;
+}
+
+/* ── Grid ─────────────────────────────────────────────────────────────────── */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-featured { grid-column: span 2; }
+
+/* ── Card ─────────────────────────────────────────────────────────────────── */
+
+.project-card {
+  background: #0b1120;
+  border: 1px solid rgba(77, 166, 255, 0.14);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(77, 166, 255, 0.45);
+  box-shadow: 0 16px 48px rgba(77, 166, 255, 0.12);
+}
+
+/* Top accent line on hover */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4da6ff, #a78bfa);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.project-card:hover::before { opacity: 1; }
+
+/* ── Thumbnail ────────────────────────────────────────────────────────────── */
+
+.project-thumb {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.project-featured .project-thumb { height: 240px; }
+
+/* Placeholder: emoji + grid pattern shown when image is missing */
+.project-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  background: linear-gradient(135deg, #0d1a35 0%, #0a1628 60%, #071020 100%);
+}
+
+.project-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(77,166,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77,166,255,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Real image sits on top of placeholder */
+.project-placeholder img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+  z-index: 1;
+}
+
+.project-card:hover .project-placeholder img { transform: scale(1.06); }
+
+/* ── Hover overlay ────────────────────────────────────────────────────────── */
+
+.project-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 8, 22, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.project-card:hover .project-thumb-overlay { opacity: 1; }
+
+.project-thumb-overlay a {
+  color: #fff;
+  background: rgba(77, 166, 255, 0.18);
+  border: 1px solid rgba(77, 166, 255, 0.6);
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.22s;
+}
+
+.project-thumb-overlay a:hover {
+  background: #4da6ff;
+  border-color: #4da6ff;
+  color: #050816;
+  font-weight: 600;
+}
+
+/* ── Card body ────────────────────────────────────────────────────────────── */
+
+.card-body {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.project-number {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(77, 166, 255, 0.45);
+  letter-spacing: 0.12em;
+}
+
+.project-status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-done     { background: rgba(0,200,120,0.12);   color: #00c878; border: 1px solid rgba(0,200,120,0.25); }
+.status-progress { background: rgba(255,180,0,0.12);   color: #ffb400; border: 1px solid rgba(255,180,0,0.25); }
+.status-group    { background: rgba(160,100,255,0.12); color: #a064ff; border: 1px solid rgba(160,100,255,0.25); }
+
+.card-body h2 {
+  font-size: 17px;
+  font-weight: 650;
+  color: #f0f4ff;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.card-body p {
+  color: #7a8aaa;
+  font-size: 13.5px;
+  line-height: 1.75;
+  flex: 1;
+}
+
+/* ── Tags ─────────────────────────────────────────────────────────────────── */
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.project-tag {
+  background: rgba(77, 166, 255, 0.08);
+  border: 1px solid rgba(77, 166, 255, 0.22);
+  color: #5ab4ff;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 5px;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.project-tag:hover {
+  background: rgba(77, 166, 255, 0.16);
+  border-color: rgba(77, 166, 255, 0.4);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-featured { grid-column: span 2; }
+}
+
+@media (max-width: 640px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-featured { grid-column: span 1; }
+  .project-thumb,
+  .project-featured .project-thumb { height: 180px; }
+}

@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Thayanithi Jesurasa</title>
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">TJ.</div>
-
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -26,75 +26,139 @@
     <section class="page-section">
 
         <h1 class="page-title">Projects</h1>
+        <p class="page-subtitle">A selection of AI, ML, and software projects I've built.</p>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai">AI / ML</button>
+            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            <button class="filter-btn" data-filter="group">Group</button>
+        </div>
 
         <div class="projects-grid">
 
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img src="assets/images/project-movie-graph.jpg">
-
-                <h2>Movie Knowledge Graph Chatbot</h2>
-
-                <p>
-                    Intelligent movie chatbot using Neo4j,
-                    graph visualization, and Text-to-Cypher
-                    conversion for movie exploration.
-                </p>
+            <!-- Project 1 — featured -->
+            <div class="project-card project-featured" data-tags="ai">
+                <div class="project-thumb">
+                    <div class="project-placeholder" data-icon="🎬">
+                        <img src="assets/images/project-movie-graph.jpg" alt="Movie Knowledge Graph Chatbot" onerror="this.style.display='none'">
+                    </div>
+                    
+                </div>
+                <div class="card-body">
+                    <div class="project-meta">
+                        <span class="project-number">01</span>
+                        <span class="project-status status-done">Individual</span>
+                    </div>
+                    <h2>Movie Knowledge Graph Chatbot</h2>
+                    <p>A graph-based intelligent movie recommendation and exploration system developed using Neo4j and graph database concepts. The system enables users to query movie relationships such as actors, genres, directors, and keywords through a chatbot interface. It integrates graph visualization, Text-to-Cypher conversion, and similarity scoring to improve movie discovery and user interaction.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Neo4j</span>
+                        <span class="project-tag">LangChain</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Graph DB</span>
+                    </div>
+                </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="project-card">
-                <img src="assets/images/project-rag-system.jpg">
-
-                <h2>Production RAG System</h2>
-
-                <p>
-                    Retrieval-Augmented Generation system
-                    using LangChain, ChromaDB, FastAPI,
-                    and Streamlit.
-                </p>
+            <div class="project-card" data-tags="ai">
+                <div class="project-thumb">
+                    <div class="project-placeholder" data-icon="🔍">
+                        <img src="assets/images/project-rag-system.jpg" alt="Production RAG System" onerror="this.style.display='none'">
+                    </div>
+                    
+                </div>
+                <div class="card-body">
+                    <div class="project-meta">
+                        <span class="project-number">02</span>
+                        <span class="project-status status-done">Individual</span>
+                    </div>
+                    <h2>Document Assistant RAG System</h2>
+                    <p>A Retrieval-Augmented Generation (RAG) system designed to provide context-aware responses by combining vector search with Large Language Models. The platform supports document ingestion, semantic retrieval, and intelligent question answering using embeddings and vector databases for efficient information retrieval.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">LangChain</span>
+                        <span class="project-tag">ChromaDB</span>
+                        <span class="project-tag">FastAPI</span>
+                        <span class="project-tag">Streamlit</span>
+                    </div>
+                </div>
             </div>
 
             <!-- Project 3 -->
-            <div class="project-card">
-                <img src="assets/images/project-result-prediction.jpg">
-
-                <h2>Undergraduate Result Prediction</h2>
-
-                <p>
-                    Group project for predicting student
-                    performance using Machine Learning
-                    and TensorFlow.
-                </p>
+            <div class="project-card" data-tags="ai group">
+                <div class="project-thumb">
+                    <div class="project-placeholder" data-icon="📊">
+                        <img src="assets/images/project-result-prediction.jpg" alt="Undergraduate Result Prediction" onerror="this.style.display='none'">
+                    </div>
+                    
+                </div>
+                <div class="card-body">
+                    <div class="project-meta">
+                        <span class="project-number">03</span>
+                        <span class="project-status status-group">Group</span>
+                    </div>
+                    <h2>Undergraduate Result Prediction</h2>
+                    <p>Group project for predicting student performance using historical student data. The project includes data preprocessing, feature engineering, model training, and performance evaluation using deep learning techniques to predict final result categories.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">TensorFlow</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Deep Learning</span>
+                    </div>
+                </div>
             </div>
 
             <!-- Project 4 -->
-            <div class="project-card">
-                <img src="assets/images/project-smarter-trainer.jpg">
-
-                <h2>Smarter Trainer App</h2>
-
-                <p>
-                    Group final-year project using AI and AR
-                    concepts for home workout guidance.
-                </p>
+            <div class="project-card" data-tags="ai group">
+                <div class="project-thumb">
+                    <div class="project-placeholder" data-icon="💪">
+                        <img src="assets/images/project-smarter-trainer.jpg" alt="Smarter Trainer App" onerror="this.style.display='none'">
+                    </div>
+                    
+                </div>
+                <div class="card-body">
+                    <div class="project-meta">
+                        <span class="project-number">04</span>
+                        <span class="project-status status-group">Group</span>
+                    </div>
+                    <h2>Smarter Trainer App</h2>
+                    <p>Final-year group project. An intelligent fitness assistance application designed to support home workouts through real-time feedback and augmented reality overlays. The system focuses on improving workout accuracy by analyzing user posture and movement during exercise sessions.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">AI</span>
+                        <span class="project-tag">AR</span>
+                        <span class="project-tag">Mobile</span>
+                    </div>
+                </div>
             </div>
 
             <!-- Project 5 -->
-            <div class="project-card">
-                <img src="assets/images/project-movie-booking.jpg">
-
-                <h2>Movie Ticket Booking App</h2>
-
-                <p>
-                    Group project for booking movie tickets,
-                    seat selection, and movie scheduling.
-                </p>
+            <div class="project-card" data-tags="fullstack group">
+                <div class="project-thumb">
+                    <div class="project-placeholder" data-icon="🎟️">
+                        <img src="assets/images/project-movie-booking.jpg" alt="Movie Ticket Booking App" onerror="this.style.display='none'">
+                    </div>
+                    
+                </div>
+                <div class="card-body">
+                    <div class="project-meta">
+                        <span class="project-number">05</span>
+                        <span class="project-status status-group">Group</span>
+                    </div>
+                    <h2>Movie Ticket Booking App</h2>
+                    <p>Group project to browse movies, view showtimes, select seats, and manage bookings through an interactive and user-friendly interface. The application focuses on usability, responsive design, and efficient booking management.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Full Stack</span>
+                        <span class="project-tag">Database</span>
+                        <span class="project-tag">UI/UX</span>
+                    </div>
+                </div>
             </div>
 
         </div>
-
     </section>
 
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
